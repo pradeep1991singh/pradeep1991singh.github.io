@@ -1,3 +1,10 @@
+function textReplace(msg) {
+  document.getElementsByClassName("heart")[0].innerHTML = "&hearts; KAYRA";   
+  window.setTimeout(function() {
+    document.getElementsByClassName("heart")[0].innerHTML = "&hearts;";    
+  }, 2000);   
+}
+
 window.onload = function() {
   var start = new Date("8/14/2012"),
     today = new Date(),
