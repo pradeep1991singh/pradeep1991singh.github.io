@@ -8,46 +8,84 @@ body {
 }
 
 .main {
-  margin: 20px auto;
-  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
+  width: 80%;  
   padding: 10px;
-  background: #009688;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 h3 {
   border-bottom: 2px solid #ccc;
   font-family: fantasy;
+  font-size: 25px;
+  color: #009688;
+  cursor: pointer;
+}
+
+h3 span {
+  color: #e6e3e3;
 }
 
 footer {
-  margin-top: 20px;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  background: #000;
-  text-align: center;;
-}
-
-footer div {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 20px 10px;
+  background: #e6e3e3;
+  text-align: center;
+  border-top: 1px dashed #009688;
 }
 
 footer a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
+}
+
+footer a:before, footer a:after {
+  content: "[";
+  opacity: 0;
+}
+
+footer a:after {
+  content: "]";
 }
 
 footer a:hover {
   color: #009688;
-  text-decoration: underline;
 }
 
-.snowflake {
+footer a:hover:before, footer a:hover:after {
+    opacity: 1;
+}
+
+footer .heart {
+  position: fixed;
+  right: 10px;
+  cursor: pointer;
+  color: #f20;
+}
+
+/* heart-beat */
+@keyframes heartbeat {
+  0% { transform: scale( 1 ); }
+  25% { transform: scale( .25 ); }
+  50% { transform: scale( .50 ); }
+  75% { transform: scale( 1 ); }
+  100% { transform: scale( .50 ); }
+}
+
+.heartbeat {
+  background: #009688;
+  font-size: 0;
   color: #009688;
+  width: 25px;
+  height: 2px;
+  animation: heartbeat 1s infinite;
 }
