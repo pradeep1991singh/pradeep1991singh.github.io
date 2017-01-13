@@ -46,6 +46,9 @@ footer {
 footer a {
   color: #000;
   text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;  
 }
 
 footer a:before, footer a:after {
@@ -59,6 +62,7 @@ footer a:after {
 
 footer a:hover {
   color: #009688;
+  border-color: #009688;
 }
 
 footer a:hover:before, footer a:hover:after {
