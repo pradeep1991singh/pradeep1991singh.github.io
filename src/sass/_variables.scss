@@ -1,0 +1,30 @@
+/**
+** main variables file 
+**/
+
+/* colors */
+$primary-color: #ccc;
+$secondary-color: #e6e3e3;
+$primary-text-color: #009688;
+$secondary-text-color: #000;
+
+/* margin, paddins and offsets */
+$margin-reset: 0;
+$padding-reset: 0;
+$default-margin: 10px;
+$default-padding: 10px;
+
+/* width and height */
+$main-content-width: 80%;
+$siderbar-content-width: 50%;
+
+/* border */
+$default-border-size: 1px;
+$default-border-radius: 5px;
+$button-border-radius: 20px;
+
+/* font-family, font-size */
+$default-font-family: monospace;
+$heading-font-family: fantasy;
+$default-font-size: 18px;
+$heading-font-size: 25px;

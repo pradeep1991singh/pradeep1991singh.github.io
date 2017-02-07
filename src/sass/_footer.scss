@@ -1,0 +1,53 @@
+/**
+** footer stylesheet 
+**/
+
+// variables
+@import "variables";
+
+$footer-width: 100%;
+
+footer {
+    width: $footer-width;
+    position: fixed;
+    bottom: 0;
+    padding: $default-padding * 2 $default-padding;
+    background: $secondary-color;
+    text-align: center;
+    border-top: $default-border-size dashed $primary-text-color;
+
+    a {
+        color: $secondary-text-color;
+        text-decoration: none;
+        padding: $default-padding / 2 $default-padding;
+        border: $default-border-size solid $primary-color;
+        border-radius: $button-border-radius;  
+
+        &:before, &:after {
+          content: "[";
+          opacity: 0;
+        }
+
+        &:after {
+          content: "]";
+        }  
+
+        &:hover {
+          color: $primary-text-color;
+          border-color: $primary-text-color;
+        } 
+
+        &:hover:before, &:hover:after {
+          opacity: 1;
+        }         
+
+    }
+
+    .heart {
+      position: fixed;
+      right: 10px;
+      cursor: pointer;
+      color: $primary-color;
+    }    
+
+  }
