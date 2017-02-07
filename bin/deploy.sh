@@ -10,13 +10,13 @@ echo "Started deploying..."
 # checkout gh-pages branch
 git checkout gh-pages
 
-# build site
-npm install
-gulp deploy
-
 # delete not required files
 mv src/* .
-rm -rf node_modules bin src sass .gitignore gulpfile.js packgage.json
+rm -rf bin src sass .gitignore gulpfile.js packgage.json
+
+# build site
+npm i
+gulp deploy
 
 # push to gh-pages branch
 git add -fA
@@ -25,6 +25,6 @@ git push -f -q origin gh-pages
 
 # move back to previous branch
 git checkout -
-bower install
+npm i
 
 echo "deployed successfully!"
