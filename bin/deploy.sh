@@ -14,6 +14,10 @@ git checkout gh-pages
 npm install
 gulp deploy
 
+# delete not required files
+mv src/* .
+rm -rf node_modules bin src sass .gitignore gulpfile.js packgage.json
+
 # push to gh-pages branch
 git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
