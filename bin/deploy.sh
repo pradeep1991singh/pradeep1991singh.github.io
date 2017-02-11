@@ -8,19 +8,19 @@ set -e
 echo "Started deploying..."
 
 # checkout gh-pages branch
-git checkout gh-pages
-
-# delete not required files
-mv src/* .
-rm -rf bin src sass .gitignore gulpfile.js packgage.json
+git checkout master
+git merge website
 
 # build site
 npm i
-gulp deploy
+gulp prod
+
+# delete not required files
+rm -rf bin sass .gitignore gulpfile.js packgage.json
 
 # push to gh-pages branch
 git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
+git commit --allow-empty -m "$(git log -1 --pretty=%B)"
 git push -f -q origin gh-pages
 
 # move back to previous branch

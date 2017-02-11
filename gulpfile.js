@@ -7,24 +7,24 @@ var inject = require('gulp-inject');
 var webserver = require('gulp-webserver');
 var runSequence = require('run-sequence');
 
-var appBaseUrl = 'http://localhost:8000/src/index.html';
+var appBaseUrl = 'http://localhost:8000/index.html';
  
 gulp.task('sass', function () {
-  return gulp.src('./src/sass/**/*.scss')
+  return gulp.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./src/css'));
+    .pipe(gulp.dest('./css'));
 });
  
 gulp.task('sass:watch', function () {
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
+  gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
 gulp.task('inject', function () {
-  var target = gulp.src('./src/index.html');
+  var target = gulp.src('./index.html');
   // It's not necessary to read the files (will speed up things), we're only after their paths: 
   var sources = gulp
-    .src(['./src/**/*.js', 
-          './src/**/*.css'
+    .src(['./js/**/*.js', 
+          './css/**/*.css'
           ], {
             read: false
           })
@@ -32,7 +32,7 @@ gulp.task('inject', function () {
  
   return target
     .pipe(inject(sources))
-    .pipe(gulp.dest('./src'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('webserver', function() {
@@ -45,13 +45,13 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('default', function() {
-  runSequence('sass', 'inject', 'webserver', 'sass:watch');
+  runSequence('serve');
 });
 
 gulp.task('serve', function() {
   runSequence('sass', 'inject', 'webserver', 'sass:watch');
 });
 
-gulp.task('deploy', function() {
+gulp.task('prod', function() {
   runSequence('sass', 'inject');
 });

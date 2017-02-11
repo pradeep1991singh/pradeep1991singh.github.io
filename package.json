@@ -4,7 +4,8 @@
   "description": "pradeep's profile",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "gulp serve",
+    "deploy": ". bin/deploy.sh"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/pradeep1991singh/pradeep1991singh.github.io#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-inject": "^4.2.0",
     "gulp-natural-sort": "^0.1.1",
     "gulp-sass": "^3.1.0",

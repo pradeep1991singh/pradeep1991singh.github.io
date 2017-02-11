@@ -1,0 +1,39 @@
+/*
+ * footer styles patials
+ */
+
+/* import variables, mixins */
+@import "variables";
+@import "mixins";
+
+$button-height: 30px;
+
+footer {
+  @include display-flex();
+
+  ul.secondary-menu {
+    margin-left: auto;
+    @include display-flex();
+    list-style: none;
+
+    li {
+      padding-right: $default-padding*2;
+    }
+  }
+
+  .other-links {
+    .tagline {
+      color: $default-font-color;
+      bottom: $default-margin*2;
+      left: $default-margin;
+      position: fixed;
+      font-style: italic;
+    }
+    .heart {
+      bottom: $default-margin;
+      right: $default-margin;
+      position: fixed;
+    }
+  }
+
+}
