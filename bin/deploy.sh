@@ -13,7 +13,7 @@ git merge new-design
 
 # build site
 npm i
-gulp prod
+gulp deploy
 
 # delete not required files
 rm -rf bin sass gulpfile.js packgage.json
