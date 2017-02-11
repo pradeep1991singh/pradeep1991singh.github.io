@@ -9,19 +9,19 @@ echo "Started deploying..."
 
 # checkout gh-pages branch
 git checkout master
-git merge website
+git merge new-design
 
 # build site
 npm i
 gulp prod
 
 # delete not required files
-rm -rf bin sass .gitignore gulpfile.js packgage.json
+rm -rf bin sass gulpfile.js packgage.json
 
 # push to gh-pages branch
 git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B)"
-git push -f -q origin gh-pages
+git push
 
 # move back to previous branch
 git checkout -
