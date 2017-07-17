@@ -92,7 +92,8 @@ body {
   box-shadow: 0 15px 49px -10px rgba(0, 0, 0, 0.5);
   color: #575b63;
   text-align: center;
-  opacity: 0.95; }
+  opacity: 0.95;
+  margin: 3%; }
   .inner-content a {
     color: #575b63;
     text-decoration: none; }
@@ -121,6 +122,18 @@ body {
     right: 10px;
     cursor: pointer;
     color: #575b63; }
+
+.flex-container {
+  display: flex; }
+
+.flex-space-around {
+  justify-content: space-around; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.flex-item {
+  margin: 5px; }
 
 /*
  * footer styles patials
