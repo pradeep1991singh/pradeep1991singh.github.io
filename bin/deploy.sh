@@ -19,8 +19,7 @@ yarn install
 gulp prod
 
 # Delete and move files.
-find . -maxdepth 1 ! -name 'sass' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
-rm -R _sass/
+rm -R sass/
 
 # Push to gh-pages.
 git add -fA
