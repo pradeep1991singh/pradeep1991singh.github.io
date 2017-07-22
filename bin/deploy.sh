@@ -19,7 +19,7 @@ yarn install
 gulp prod
 
 # Delete and move files.
-rm -R node_moduels/
+rm -R node_modules/
 rm -R sass/
 
 # Push to gh-pages.
