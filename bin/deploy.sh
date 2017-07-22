@@ -1,30 +1,34 @@
 #!/usr/bin/env sh
 
-# run this script to deploy the site to gh-pages branch
+# Run this script to deploy the app to Github Pages.
 
-# exit if any subcommand fails
+# Exit if any subcommand fails.
 set -e
 
-echo "Started deploying..."
+echo "Started deploying"
 
-# checkout gh-pages branch
-git checkout master
-git merge new-design
+# Checkout gh-pages branch.
+if [ `git branch | grep gh-pages` ]
+then
+  git branch -D gh-pages
+fi
+git checkout -b gh-pages
 
-# build site
-npm i
-gulp deploy
+# Build site.
+yarn install
+gulp prod
 
-# delete not required files
-rm -rf bin sass gulpfile.js packgage.json
+# Delete and move files.
+find . -maxdepth 1 ! -name 'sass' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
+rm -R _sass/
 
-# push to gh-pages branch
+# Push to gh-pages.
 git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B)"
-git push
+git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
+git push -f -q origin gh-pages
 
-# move back to previous branch
+# Move back to previous branch.
 git checkout -
-npm i
+yarn install
 
-echo "deployed successfully!"
+echo "Deployed Successfully!"
