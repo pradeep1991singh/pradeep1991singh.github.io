@@ -25,20 +25,19 @@
 
   <script>
     (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-103054361-1', 'auto');
     ga('send', 'pageview');
-
   </script>
 
 </head>
 
-<body>
+<body class="flex-container flex-column">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -58,7 +57,7 @@
         <div class="item2">P</div>
       </a>
 
-      <ul class="main-menu">
+      <!-- <ul class="main-menu">
         <li>
           <a target="_blank" href="https://github.com/pradeep1991singh?tab=repositories">GitHub</a>
         </li>
@@ -68,47 +67,56 @@
         <li>
           <a target="_blank" href="https://www.npmjs.com/~pradeep1991singh">npm</a>
         </li>
-      </ul>
+      </ul> -->
     </header>
 
-    <section class="main-content">
-      <p class="intro">Hi, there! <br/> My name is Pradeep <br/> Senior software engineer | Evernym, Inc.
-      </p>
+    <main class="flex-container">
+      <section class="main-content">
+        <p class="intro">Hi, there! <br/> My name is Pradeep <br/> Senior software engineer | Evernym, Inc.
+        </p>
 
-      <p class="tagline">
-        &raquo; Very passionate to work in bleeding and cutting edge technology.<br/> &raquo; More than
-        <span id="exp-year"></span> years of experience in building hybrid, scalable and rock solid softwares and applications
-        !!
-      </p>
+        <p class="tagline">
+          &raquo; Very passionate to work in bleeding and cutting edge technology.<br/> &raquo; More than
+          <span id="exp-year"></span> years of experience in building hybrid, scalable and rock solid softwares and applications
+          !!
+        </p>
 
-      <div class="heartbeat"></div>
-    </section>
-
-    <footer>
-      <div class="other-links">
-        <span class="tagline">"Technology must be use to liberate the individual!""</span>
-        <span class="heart" title="&hearts; KAYRA" onclick="textReplace('&hearts; KAYRA');">
-              &hearts;
-          </span>
-      </div>
-
-      <ul class="secondary-menu">
-        <li>
-          <a target="_blank" href="https://www.linkedin.com/in/pradeep1991singh">LinkedIn</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://twitter.com/pradeep91singh">Twitter</a>
-        </li>
-        <li>
-          <a href="mailto:pradeep1991singh@gmail.com">Email</a>
-        </li>
-      </ul>
-    </footer>
-
+        <div class="heartbeat"></div>
+      </section>
+      <section class="skills">
+      </section>
+    </main>
   </div>
 
-  <section class="skills">
-  </section>
+  <footer>
+    <div class="other-links">
+      <span class="tagline">"Technology must be use to liberate the individual!"</span>
+      <span class="heart" title="&hearts; KAYRA" onclick="textReplace('&hearts; KAYRA');">
+              &hearts;
+          </span>
+    </div>
+
+    <ul class="secondary-menu">
+      <li>
+        <a target="_blank" href="https://github.com/pradeep1991singh?tab=repositories">GitHub</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://stackoverflow.com/story/pradeep1991singh">StackOverflow</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.npmjs.com/~pradeep1991singh">NPM</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.linkedin.com/in/pradeep1991singh">LinkedIn</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://twitter.com/pradeep91singh">Twitter</a>
+      </li>
+      <li>
+        <a href="mailto:pradeep1991singh@gmail.com">Email</a>
+      </li>
+    </ul>
+  </footer>
 
 </body>
 

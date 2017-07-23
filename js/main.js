@@ -1,16 +1,16 @@
 // main.js
 
 var iconMap = {
-  'php-icon': { rate: 7, skin: 'orange' },
+  'php-icon': { rate: 7, skin: 'orange thin' },
   'css3-icon': { rate: 8, skin: 'normal' },
-  'html5-icon': { rate: 8, skin: 'orange dark' },  
+  'html5-icon': { rate: 8, skin: 'orange dark' },
   'sass-icon': { rate: 7, skin: 'normal' },
   'js-icon': { rate: 7, skin: 'normal' },
   'ts-icon': { rate: 5, skin: 'green dark' },
   'jsx-icon': { rate: 7, skin: 'green' },
   'sql-icon': { rate: 5, skin: 'normal dark' },
   'terminal-icon': { rate: 5, skin: 'orange dark thin' },
-  'drupal-icon': { rate: 8, skin: 'green' },
+  'drupal-icon': { rate: 8, skin: 'normal' },
   'jquery-icon': { rate: 8, skin: 'green dark' },
   'knockout-icon': { rate: 6, skin: 'orange' },
   'angular-icon': { rate: 8, skin: 'normal' },
@@ -33,17 +33,17 @@ var iconMap = {
   'jasmine-icon': { rate: 6, skin: 'orange' },
   'scala-icon': { rate: 6, skin: 'orange dark' },
   'jest-icon': { rate: 5, skin: 'green' },
-  'windows-icon': { rate: 8, skin: 'green' },
+  'windows-icon': { rate: 8, skin: 'normal thin' },
   'linux-icon': { rate: 8, skin: 'orange' },
-  'osx-icon': { rate: 8, skin: 'normal thinner' }
+  'osx-icon': { rate: 8, skin: 'normal thin' }
 };
 
 var iconList = Object.keys(iconMap);
 
 function textReplace(msg) {
-  document.getElementsByClassName('heart')[0].innerHTML = '&hearts; KAYRA';
+  document.querySelector('.heart').innerHTML = '&hearts; KAYRA';
   window.setTimeout(function() {
-    document.getElementsByClassName('heart')[0].innerHTML = '&hearts;';
+    document.querySelector('.heart').innerHTML = '&hearts;';
   }, 2000);
 }
 
@@ -58,31 +58,46 @@ window.onload = function() {
     'exp-year'
   ).innerHTML = yearDiff);
 
-  var start = 0;
-  var intervalId = setInterval(function() {
-    populateSkillSection(iconList.slice(start, start + 9));
-    start += 9;
-    if (start > iconList.length) {
-      clearInterval(intervalId);
-    }
-  }, 2000);
+  console.log('Window: ' + window.innerWidth, ', Screen: ' + screen.width);
+  var deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+  console.log(
+    'Rate skill on scale of 10; Use https://percentify.firebaseapp.com'
+  );
+
+  populateSkillSection(iconList, deviceWidth);
+
+  // var start = 0;
+  // var intervalId = setInterval(function() {
+  //   populateSkillSection(iconList.slice(start, start + 9));
+  //   start += 9;
+  //   if (start > iconList.length) {
+  //     clearInterval(intervalId);
+  //   }
+  // }, 1000);
 };
 
-function populateSkillSection(list) {
-  var skillSection = document.getElementsByClassName('skills')[0].innerHTML;
+function populateSkillSection(list, width) {
+  var cfs = width <= 480 ? 30 : 55;
+  var ifs = width <= 480 ? 15 : 25;
+  var skillSection = document.querySelector('.skills').innerHTML;
   skillSection += '<div class="flex-container flex-wrap">';
   list.forEach(function(element) {
     skillSection +=
       '<div class="flex-item percentify p' +
       iconMap[element].rate / 10 * 100 +
-      ' cfs80 hover active ' +
+      ' cfs' +
+      cfs +
+      ' hover active ' +
       iconMap[element].skin +
       '" title="' +
       element +
       '">' +
       '<span class="' +
       element +
-      ' ifs35"></span>' +
+      ' ifs' +
+      ifs +
+      '"></span>' +
       '<div class="slice">' +
       '<div class="bar"></div>' +
       '<div class="fill"></div>' +
@@ -90,5 +105,5 @@ function populateSkillSection(list) {
       '</div>';
   }, this);
   skillSection += '</div>';
-  document.getElementsByClassName('skills')[0].innerHTML = skillSection;
+  document.querySelector('.skills').innerHTML = skillSection;
 }

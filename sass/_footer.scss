@@ -11,6 +11,31 @@ $button-height: 30px;
 footer {
   @include display-flex();
 
+  // nesting used
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:before,
+    &:after {
+      content: "[";
+      opacity: 0;
+    }
+
+    &:after {
+      content: "]";
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
   ul.secondary-menu {
     margin-left: auto;
     @include display-flex();
