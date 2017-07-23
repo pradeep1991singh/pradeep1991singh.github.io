@@ -29,6 +29,29 @@ body {
     padding: $default-padding/2;
   }
 
+  .logo {
+    .item1 {
+      position: absolute;
+      z-index: 1;
+      width: $logo-width-height;
+      height: $logo-width-height;
+      border: $default-border-size solid $default-border-color;
+    }
+
+    .item2 {
+      @extend .item1; // inheritance used
+      background: $secondary-bg-color;
+      padding: $default-padding $padding-left-right;
+      margin: $default-margin/2 auto auto $default-margin/2;
+      font-size: $default-font-size;
+      color: $default-font-color;
+      z-index: 2;
+      width: $logo-width-height/2 - 3;
+      height: $logo-width-height/2 + 3;
+      border: none;
+    }
+  }
+
   section {
     width: 50%;
     padding: $default-padding*2;
@@ -40,6 +63,7 @@ body {
 
     .tagline {
       font-size: $main-content-size/2;
+      text-align: left;
     }
 
     &:first-child {

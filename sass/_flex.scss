@@ -1,7 +1,7 @@
 @import "mixins";
 
 .flex-container {
-  display: flex;
+  @include display-flex();
 }
 
 .flex-space-around {
@@ -22,4 +22,8 @@
 
 .flex-column {
   @include flex-direction(column);
+}
+
+.flex-center {
+  justify-content: center;
 }
