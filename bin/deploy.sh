@@ -7,12 +7,12 @@ set -e
 
 echo "Started deploying"
 
-# Checkout gh-pages branch.
-if [ `git branch | grep gh-pages` ]
+# Checkout master branch.
+if [ `git branch | grep master` ]
 then
-  git branch -D gh-pages
+  git branch -D master
 fi
-git checkout -b gh-pages
+git checkout -b master
 
 # Build site.
 yarn install
@@ -22,10 +22,10 @@ gulp prod
 rm -R node_modules/
 rm -R sass/
 
-# Push to gh-pages.
+# Push to master.
 git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-git push -f -q origin gh-pages
+git push -f -q origin master
 
 # Move back to previous branch.
 git checkout -
