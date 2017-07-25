@@ -19,8 +19,7 @@ yarn install
 gulp prod
 
 # Delete and move files.
-rm -R node_modules/
-rm -R sass/
+rm -R node_modules/ sass/ bin/ .gitignore gulpfile.js package.json README.md yarn.lock CNAME
 
 # Push to master.
 git add -fA
